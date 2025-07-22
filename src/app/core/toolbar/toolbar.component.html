@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <span>Administración Académica</span>
+  <span class="spacer"></span>
+
+  <mat-form-field appearance="fill" class="rol-selector">
+    <mat-label>Rol</mat-label>
+    <mat-select [(ngModel)]="rol" (selectionChange)="cambiarRol()">
+      <mat-option value="admin">Administrador</mat-option>
+      <mat-option value="usuario">Usuario</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>

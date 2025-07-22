@@ -1,0 +1,48 @@
+<h2 appTituloGrande>Listado de Alumnos</h2>
+
+<table mat-table [dataSource]="alumnos" class="mat-elevation-z2 full-width-table">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let alumno">{{ alumno.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombreCompleto">
+    <th mat-header-cell *matHeaderCellDef>Nombre completo</th>
+    <td mat-cell *matCellDef="let alumno">
+      {{ alumno.nombre | nombreCompleto: alumno.apellido }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let alumno">{{ alumno.email }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="curso">
+    <th mat-header-cell *matHeaderCellDef>Curso</th>
+    <td mat-cell *matCellDef="let alumno">{{ alumno.curso }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+    <td mat-cell *matCellDef="let alumno">
+      <button mat-icon-button color="warn" (click)="eliminar(alumno.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button color="accent" [routerLink]="['/alumnos/editar', alumno.id]">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+</table>
+
+<div class="d-flex justify-content-end mb-3" style="text-align: center;">
+  <button mat-raised-button color="primary" [routerLink]="['/alumnos/nuevo']">
+    <mat-icon>add</mat-icon>
+    Nuevo Alumno
+  </button>
+</div>

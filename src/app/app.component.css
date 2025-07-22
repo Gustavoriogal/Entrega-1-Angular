@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .main-layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidenav {
+    width: 240px;
+    background-color: #f0f0f0;
+  }
+  
+  .main-content {
+    padding: 24px;
+    background-color: #fff;
+    min-height: calc(100vh - 64px); 
+  }
+  

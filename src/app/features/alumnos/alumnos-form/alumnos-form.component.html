@@ -1,0 +1,39 @@
+<h2 class="titulo">Formulario de Alumno</h2>
+
+<form [formGroup]="form" (ngSubmit)="guardar()" class="formulario">
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <mat-form-field class="w-100">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" />
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <mat-form-field class="w-100">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="apellido" />
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <mat-form-field class="w-100">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <mat-form-field class="w-100">
+        <mat-label>Curso</mat-label>
+        <input matInput formControlName="curso" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+    Guardar Alumno
+  </button>
+
+</form>
